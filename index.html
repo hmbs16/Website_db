@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MYsql Web page</title>
+  </head>
+  <body>
+    <h1>test website</h1>
+    <p>This website uses JavaScript to add interactivity.</p>
+    <p> Hi yoyo</p>
+    <button id="clicky">Click me</button>
+    <button onclick="test()">test</button>
+    <script>
+      const button = document.getElementById("clicky")
+
+      if (!button) {
+        debugger
+      }
+
+      const onClick = () => {
+        console.log("I WAS CLICKED!!")
+        fetch("access_db")
+          .then((response) => console.log(response.text()))
+          .catch(error => console.error(`Ahhh: ${error}`))
+      }
+
+      button.addEventListener("click", onClick)
+
+
+      
+
+    </script>
+  </body>
+</html>
